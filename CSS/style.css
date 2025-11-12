@@ -1,0 +1,31 @@
+/* RESET CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* IMPORT DE FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* VARIÁVEIS DE CORES */
+:root {
+  --cor-primaria: #243650;
+  --cor-secundaria: #f4bb1d;
+  --cor-terciaria: #415b75;
+  --cor-primaria-bg: #0d111c;
+  --cor-secundaria-bg:#1a202c;
+  --cor-primaria-fonte: #ffffffd9;
+  --cor-secundaria-fonte: #aebacd;
+  --cor-links: #3498db;
+  --cor-article-bg: #28303d;
+}
+
+/* ESTILIZAÇÕES GERAIS */
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--cor-primaria-bg);
+  color: var(--cor-primaria-fonte);
+  line-height: 1.6;
+}
