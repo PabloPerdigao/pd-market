@@ -19,7 +19,7 @@
   --cor-primaria-fonte: #ffffffd9;
   --cor-secundaria-fonte: #aebacd;
   --cor-links: #3498db;
-  --cor-article-bg: #28303d;
+  --cor-cta-btn: #ffbb00;
 }
 
 /* ESTILIZAÇÕES GERAIS */
@@ -51,7 +51,7 @@ body {
       '20s' é a duração total (5s por slide).
       'infinite' faz com que ela rode em loop.
     */
-    animation: autoplay 20s infinite ease-in-out;
+    animation: autoplay 32s infinite ease-in-out;
   }
 
   /* 3. Cada slide individual */
@@ -109,7 +109,7 @@ body {
   }
 
   .cta-button:hover {
-    background-color: #ffbb00;
+    background-color: var(--cor-cta-btn);
     transform: scale(1.05);
   }
 
@@ -162,8 +162,7 @@ body {
     Quando o slide 1 está checado (default) */
     #slide1:checked ~ .slides-wrapper {
       margin-left: 0;
-      /* Para a animação quando o usuário clica */
-      animation: none;
+      
     }
 
     /* Quando o slide 2 está check */
@@ -206,3 +205,5 @@ body {
       /* Volta ao início */
       100% { margin-left: 0; }
     }
+
+  
