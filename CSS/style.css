@@ -29,3 +29,180 @@ body {
   color: var(--cor-primaria-fonte);
   line-height: 1.6;
 }
+
+/* --- FEATURE-CAROUSEL --- */
+
+  .carousel-container {
+    width: 100%;
+    margin: 2rem auto;
+    overflow: hidden; /* Esconde os slides que estão fora da tela */
+    position: relative; /* Para posicionar a navegação e as legendas */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 2. O "trilho" que mantém todos os slides */
+  .slides-wrapper {
+    display: flex;
+    width: 100%;
+    
+    /*  (AUTOPLAY): 
+      'autoplay' é o nome da animação.
+      '20s' é a duração total (5s por slide).
+      'infinite' faz com que ela rode em loop.
+    */
+    animation: autoplay 20s infinite ease-in-out;
+  }
+
+  /* 3. Cada slide individual */
+  .slide,
+  .slide-video {
+    width: 100%; /* Garante que cada slide ocupe 1/4 do 'trilho' */
+    flex-basis: 100%;
+    flex-shrink: 0;
+    position: relative; /* Para o <figcaption> */
+  }
+
+  /* 4. A mídia (imagem/vídeo) */
+  .slide img,
+  .slide-video video {
+    width: 100%;
+    height: 55vh; /* Altura do carrossel (55% da altura da tela) */
+    object-fit: cover; /* Garante que a mídia cubra todo o espaço */
+    display: block; /* Remove espaços em branco indesejados */
+  }
+
+  /* 5. A legenda sobre o slide */
+  .slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 4rem;
+    color: var(--cor-primaria-fonte);
+  
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  }
+
+  .slide-content h2 {
+    font-size: 3.2rem;
+    color: var(--cor-primaria-fonte);
+    margin-bottom: 0.5rem;
+  }
+
+
+  .slide-content p {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* 6. O botão Call-to-Action */
+  .cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-bg);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #ffbb00;
+    transform: scale(1.05);
+  }
+
+  /* --- NAVEGAÇÃO CSS-ONLY --- */
+
+    /* 7. Esconde os botões radio */
+    .carousel-container input[type="radio"] {
+      display: none;
+    }
+
+    /* 8. O container dos labels de navegação */
+    .carousel-navigation {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+
+    /* 9. Cada label */
+    .nav-dot {
+      width: 12px;
+      height: 12px;
+      background-color: #FFF;
+      opacity: 0.5;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-dot:hover {
+      opacity: 0.8;
+    }
+
+    /* 10. Quando o input correspondente está :checked...
+    ...o 'nav-dot' (label) muda de cor. */
+    #slide1:checked ~ .carousel-navigation label[for="slide1"],
+    #slide2:checked ~ .carousel-navigation label[for="slide2"],
+    #slide3:checked ~ .carousel-navigation label[for="slide3"],
+    #slide4:checked ~ .carousel-navigation label[for="slide4"] {
+      opacity: 1;
+      background-color: var(--cor-secundaria);
+      transform: scale(1.1);
+    }
+
+    /* 11. O principal: Quando o input está :checked... 
+    ...o 'slides-wrapper' (irmão ~) se move. 
+
+    Quando o slide 1 está checado (default) */
+    #slide1:checked ~ .slides-wrapper {
+      margin-left: 0;
+      /* Para a animação quando o usuário clica */
+      animation: none;
+    }
+
+    /* Quando o slide 2 está check */
+    #slide2:checked ~ .slides-wrapper {
+      margin-left: -100%;
+      animation: none;
+    }
+    /* Quando o slide 3 está check */
+    #slide3:checked ~ .slides-wrapper {
+      margin-left: -200%;
+      animation: none;
+    }
+    /* Quando o slide 4 está check */
+    #slide4:checked ~ .slides-wrapper {
+      margin-left: -300%;
+      animation: none;
+    }
+
+
+  /* ---  AUTOPLAY CSS-ONLY --- */
+
+    /* 12. A animação que move o 'margin-left' */
+    @keyframes autoplay {
+      /* Slide 1 (0% a 25%) */
+      0%   { margin-left: 0; }
+      20%  { margin-left: 0; } /* Fica parado no slide 1 */
+      
+      /* Slide 2 (25% a 50%) */
+      25%  { margin-left: -100%; }
+      45%  { margin-left: -100%; } /* Fica parado no slide 2 */
+      
+      /* Slide 3 (50% a 75%) */
+      50%  { margin-left: -200%; }
+      70%  { margin-left: -200%; } /* Fica parado no slide 3 */
+      
+      /* Slide 4 (75% a 100%) */
+      75%  { margin-left: -300%; }
+      95%  { margin-left: -300%; } /* Fica parado no slide 4 */
+      
+      /* Volta ao início */
+      100% { margin-left: 0; }
+    }
