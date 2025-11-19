@@ -57,7 +57,11 @@ body {
     border-bottom: 0.5px solid var(--cor-borda);
     box-shadow: 1px 1px 10px 1px ;
 
+  }
 
+  .feature-header:hover {
+    border-bottom: 0.5px solid var(--cor-secundaria);
+    box-shadow: 1px 1px 10px 1px var(--cor-secundaria);
   }
 
   .header-top {
@@ -234,12 +238,13 @@ body {
 
   .carousel-container {
     width: 100%;
-    margin: 2rem auto;
+    margin: 0.5rem auto;
     overflow: hidden; /* Esconde os slides que tão fora da tela */
     position: relative; /* Para pode posicionar a navegação. */
-    border-radius: 8px;
+    border-radius:  0 0 8px 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
+
 
   /* 2. O trem que mantém todos os slides */
   .slides-wrapper {
