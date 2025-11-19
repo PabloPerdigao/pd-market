@@ -36,6 +36,114 @@
 </head>
 <!-- BODY | Conteúdo visível da página -->
 <body>
+
+    <!-- HEADER | Cabeçalho da página -->
+    <header class="feature-header">
+
+        <!--  SECTION - HEADER TOP |  Seção superior do cabeçalho -->
+        <section class="header-top">
+
+            <!-- DIV - LOGO | Usada para posicionar e estilizar a Logo -->
+            <div class="logo">
+
+                <!-- A - LOGO | Link para a página inicial -->
+                <a href="index.html">
+
+                    <!-- IMG - LOGO | Imagem da logo do site -->
+                    <img src="./assets/img/header-logo.png" alt="PD Market Tech - Voltar ao Início">
+                </a>
+            </div>
+
+            <!-- FORM - SEARCH BAR | Barra de busca para produtos, marcas... -->
+            <form class="search-bar" action="/search" method="get">
+                
+                <!-- <label for="search-input">Buscar no PD Market</label> -->
+
+                <!-- INPUT - SEARCH | Campo de busca para produtos, marcas... -->
+                <input type="search" id="search-input" name="q" placeholder="Buscar produtos, marcas...">
+
+                <!-- BUTTON - SEARCH | Botão para enviar a busca -->
+                <button type="submit">
+
+                    <!-- SVG - SEARCH | Ícone de lupa representando o botão de busca -->
+                    <svg role="img" aria-labelledby="svg-title svg-desc" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#aebacd" viewBox="0 0 256 256">
+
+                        <!-- TITLE | Título do ícone de lupa -->
+                        <title id="svg-title">Busca</title>
+
+                        <!-- DESC | Descrição do ícone de lupa -->
+                        <desc id="svg-desc">Este ícone de lupa representa o botão de busca.</desc>
+
+                        <!-- PATH | Caminho do ícone de lupa -->
+                        <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+                </button>
+            </form>
+
+            <!-- UL - USER ACTIONS | Lista  não ordenada de ações do usuário: favoritos, notificações, carrinho e o perfil -->
+            <ul class="user-actions">
+
+                <!-- LI - FAVORITOS| Link para página de itens favoritados pelo usuário -->
+                <li>
+                    <a href="/favoritos" title="Meus Favoritos">
+                        <svg role="img" aria-labelledby="svg-title svg-desc" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                            <title id="svg-title">Favoritos</title>
+                            <desc id="svg-desc">Este ícone de estrela representa os itens favoritados pelo usuário.</desc>
+                            <path d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z"></path>
+                            
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- LI - NOTIFICAÇÕES | Link para a página de notificações do usuário -->
+                <li>
+                    <a href="/notificacoes" title="Notificações">
+                        <svg role="img" aria-labelledby="svg-title svg-desc" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                            <title id="svg-title">Avisos</title>
+                            <desc id="svg-desc">Este ícone de sino representa as notificações do usuário.</desc>
+                            <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- LI - CARRINHO | Link para a página da lista de compras do usuário -->
+                <li>
+                    <a href="/carrinho" title="Meu Carrinho">
+                        <svg role="img" aria-labelledby="svg-title svg-desc" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                            <title id="svg-title">Carrinho de Compras</title>
+                            <desc id="svg-desc">Este ícone representa um carrinho de compras.</desc>
+                            <path d="M230.14,58.87A8,8,0,0,0,224,56H62.68L56.6,22.57A8,8,0,0,0,48.73,16H24a8,8,0,0,0,0,16h18L67.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,160,204a28,28,0,1,0,28-28H91.17a8,8,0,0,1-7.87-6.57L80.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,230.14,58.87ZM104,204a12,12,0,1,1-12-12A12,12,0,0,1,104,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,200,204Zm4-74.57A8,8,0,0,1,196.1,136H77.22L65.59,72H214.41Z"></path>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- LI - PERFIL | Link para o perfil do usuário -->
+                <li>
+                    <a href="/perfil" class="profile-link" title="Meu Perfil">
+                       <svg role="img" aria-labelledby="svg-title svg-desc" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                            <title id="svg-title">Perfil</title>
+                            <desc id="svg-desc">Este ícone de perfil do usuário</desc>
+                            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+        </section> 
+        
+        <!-- NAV - HEADER NAV | Navegação principal do cabeçalho -->
+        <nav class="header-nav">
+
+            <!-- UL - NAV LINKS | Lista não ordenada de links da navegação principal -->
+            <ul> 
+                <li><a href="/hardware">Hardware</a></li> 
+                <li><a href="/software">Software</a></li>
+                <li><a href="/perifericos">Periféricos</a></li>
+                <li><a href="/games">Games</a></li>
+                <li><a href="/promocoes">Promoções</a></li>
+            </ul>
+        </nav>
+
+    </header>
   
 </body>
 </html> 
