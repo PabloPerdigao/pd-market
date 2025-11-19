@@ -146,6 +146,80 @@
     </header>
   
     <main>
+      </section>
+
+        <!-- SECTION | Carrossel de ofertas -->
+        <section class="carousel-container">
+            
+            <!-- INPUTS | Botões de navegação do carrossel -->
+            <input type="radio" name="carousel" id="slide1" checked> <input type="radio" name="carousel" id="slide2">
+            <input type="radio" name="carousel" id="slide3">
+            <input type="radio" name="carousel" id="slide4">
+
+            <!-- SLIDES WRAPPER | Tag responsável por agrupar o contêiner dos slides -->
+            <div class="slides-wrapper">
+                
+                <!-- FIGURE | Tag que representa um conteúdo independente -->
+                <figure class="slide-video">
+
+                    <!-- VIDEO | Tag que incorpora um vídeo na página -->
+                    <video autoplay muted loop poster="assets/img/icons/logo.png">
+                        <!-- SOURCE | Busca fonte do vídeo -->
+                        <source src="assets/media/video-promocional.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+
+                    <!-- FIGCAPTION | Legenda/descrição do slide -->
+                    <figcaption class="slide-content">
+
+                        <!-- H2 | Título de segundo nível da legenda do carrossel -->
+                        <h2>O Setup dos sonhos</h2>
+
+                        <!-- P | Parágrafo da legenda do carrossel -->
+                        <p>BLACK FRIDAY - Setup 50%OFF</p>
+                        <a href="/oferta-video" class="cta-button">Garantir oferta</a>
+                    </figcaption>
+
+                </figure>
+
+                <figure class="slide">
+                    <img src="assets/img/banner-perifericos.png" alt="Promoção de teclados mecânicos">
+                    <figcaption class="slide-content">
+                        <h2>Periféricos com 30% OFF</h2>
+                        <p>Monte seu setup ideal com desconto.</p>
+                        <a href="/oferta-perifericos" class="cta-button">Ver oferta</a>
+                    </figcaption>
+                </figure>
+
+                <figure class="slide">
+                    <img src="assets/img/banner-ergonomia.png" alt="Cadeiras gamer em promoção">
+                    <figcaption class="slide-content">
+                        <h2>Conforto Absoluto</h2>
+                        <p>Cadeiras gamer com ergonomia avançada.</p>
+                        <a href="/oferta-cadeiras" class="cta-button">Ver oferta</a>
+                    </figcaption>
+                </figure>
+
+                <figure class="slide">
+                    <img src="assets/img/banner-softwares.png" alt="Oferta de softwares">
+                    <figcaption class="slide-content">
+                        <h2>Software Essencial</h2>
+                        <p>Licenças de antivírus e edição com desconto.</p>
+                        <a href="/oferta-software" class="cta-button">Ver oferta</a>
+                    </figcaption>
+                </figure>
+            </div> 
+
+            <div class="carousel-navigation" >
+                <!-- LABELS | Tag que representa os botões de navegação do carrossel -->
+                <label for="slide1" class="nav-dot"></label>
+                <label for="slide2" class="nav-dot"></label>
+                <label for="slide3" class="nav-dot"></label>
+                <label for="slide4" class="nav-dot"></label>
+            </div>
+
+        </section> 
+          
         <section class="shop">
             <!-- ASIDE | Tag que representa a barra lateral de filtros -->
             <aside class="sidebar-filters">
@@ -1052,79 +1126,7 @@
                 </aside>
             </section>
 
-      </section>
-
-        <!-- SECTION | Carrossel de ofertas -->
-        <section class="carousel-container">
-            
-            <!-- INPUTS | Botões de navegação do carrossel -->
-            <input type="radio" name="carousel" id="slide1" checked> <input type="radio" name="carousel" id="slide2">
-            <input type="radio" name="carousel" id="slide3">
-            <input type="radio" name="carousel" id="slide4">
-
-            <!-- SLIDES WRAPPER | Tag responsável por agrupar o contêiner dos slides -->
-            <div class="slides-wrapper">
-                
-                <!-- FIGURE | Tag que representa um conteúdo independente -->
-                <figure class="slide-video">
-
-                    <!-- VIDEO | Tag que incorpora um vídeo na página -->
-                    <video autoplay muted loop poster="assets/img/icons/logo.png">
-                        <!-- SOURCE | Busca fonte do vídeo -->
-                        <source src="assets/media/video-promocional.mp4" type="video/mp4">
-                        Seu navegador não suporta a tag de vídeo.
-                    </video>
-
-                    <!-- FIGCAPTION | Legenda/descrição do slide -->
-                    <figcaption class="slide-content">
-
-                        <!-- H2 | Título de segundo nível da legenda do carrossel -->
-                        <h2>O Setup dos sonhos</h2>
-
-                        <!-- P | Parágrafo da legenda do carrossel -->
-                        <p>BLACK FRIDAY - Setup 50%OFF</p>
-                        <a href="/oferta-video" class="cta-button">Garantir oferta</a>
-                    </figcaption>
-
-                </figure>
-
-                <figure class="slide">
-                    <img src="assets/img/banner-perifericos.png" alt="Promoção de teclados mecânicos">
-                    <figcaption class="slide-content">
-                        <h2>Periféricos com 30% OFF</h2>
-                        <p>Monte seu setup ideal com desconto.</p>
-                        <a href="/oferta-perifericos" class="cta-button">Ver oferta</a>
-                    </figcaption>
-                </figure>
-
-                <figure class="slide">
-                    <img src="assets/img/banner-ergonomia.png" alt="Cadeiras gamer em promoção">
-                    <figcaption class="slide-content">
-                        <h2>Conforto Absoluto</h2>
-                        <p>Cadeiras gamer com ergonomia avançada.</p>
-                        <a href="/oferta-cadeiras" class="cta-button">Ver oferta</a>
-                    </figcaption>
-                </figure>
-
-                <figure class="slide">
-                    <img src="assets/img/banner-softwares.png" alt="Oferta de softwares">
-                    <figcaption class="slide-content">
-                        <h2>Software Essencial</h2>
-                        <p>Licenças de antivírus e edição com desconto.</p>
-                        <a href="/oferta-software" class="cta-button">Ver oferta</a>
-                    </figcaption>
-                </figure>
-            </div> 
-
-            <div class="carousel-navigation" >
-                <!-- LABELS | Tag que representa os botões de navegação do carrossel -->
-                <label for="slide1" class="nav-dot"></label>
-                <label for="slide2" class="nav-dot"></label>
-                <label for="slide3" class="nav-dot"></label>
-                <label for="slide4" class="nav-dot"></label>
-            </div>
-
-        </section> 
+      
     </main>
   
   
