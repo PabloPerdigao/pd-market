@@ -41,6 +41,89 @@ body {
   line-height: 1.6;
 }
 
+/* --- FEATURE-FOOTER --- */
+
+.main-footer {
+    background-color: #0d111c; /* Fundo Escuro */
+    color: #aebacd; /* Texto Cinza Claro */
+    padding: 3rem 2rem 1rem 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    /* Cria colunas responsivas: mínimo 200px cada */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+}
+
+.footer-col h5 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    border-left: 3px solid var(--cor-secundaria);
+    padding-left: 0.8rem;
+}
+
+/* Estilizando Listas */
+dl, ol, address {
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+dt { 
+  color: var(--cor-secundaria);
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+dd { 
+  margin-left: 0;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+ol { 
+  margin-left: 1.5rem; 
+}
+
+ol li {
+  margin-bottom: 0.4rem; 
+}
+
+ol li a {
+  color: var(--cor-links);
+  text-decoration: none;
+}
+
+ol li a:hover {
+  color: #0099ff;
+  text-decoration: underline;
+}
+
+address { 
+  font-style: normal; 
+}
+
+address a {
+    color: var(--cor-links);
+    text-decoration: none;
+}
+
+progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--cor-secundaria-bg);
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
 /* --- FEATURE-CARDS (Simplificado) --- */
 
   .shop {
