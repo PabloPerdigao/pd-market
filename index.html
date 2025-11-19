@@ -19,5 +19,914 @@
 <!-- BODY | Conteúdo visível da página -->
 <body>
   
+    <main>
+        <section class="shop">
+            <!-- ASIDE | Tag que representa a barra lateral de filtros -->
+            <aside class="sidebar-filters">
+                
+                <!-- H3 | Título de 3º nível da barra lateral de filtros -->
+                <h3>Filtros</h3>
+
+                <!-- DETAILS | Tag que representa um bloco de conteúdo que pode ser expandido ou recolhido -->
+                <details open>
+                    <!-- SUMMARY | Título do bloco que pode ser clicado para expandir ou recolher o conteúdo -->
+                    <summary>Categorias</summary>
+
+                    <!-- UL | Lista não ordenada de links -->
+                    <ul class="links">
+                        <!-- LI | Item da lista de links -->
+                        <li><a href="#">Periféricos (14)</a></li>
+                        <li><a href="#">Hardware (8)</a></li>
+                        <li><a href="#">Licenças (5)</a></li>
+                        <li><a href="#">Games (3)</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Preço</summary>
+                    <form onsubmit="return false">
+                        <fieldset>
+                            <legend>Faixa de Preço</legend>
+                            <!-- LABEL | tag que define um rótulo para o input range -->
+                            <label for="range">Até R$ 5000</label>
+                            
+                            <input type="range" id="range" name="price" min="0" max="5000" oninput="val.value = this.value">
+                            
+                            <p>Valor: R$ 
+                                <!-- OUTPUT | Tag que exibe o valor selecionado no input range -->
+                                <output id="val">2500</output>
+                            </p>
+                        </fieldset>
+
+                        <label for="brand">Marca:</label>
+                        <input list="brands" id="brand" name="brand" placeholder="Ex: AMD">
+                        
+                        <!-- DATALIST | Lista de opções para o campo de seleção de marca -->
+                        <datalist id="brands">
+
+                            <!-- OPTION | Opção da lista de seleção -->
+                            <option value="AMD">
+                            <option value="Intel">
+                            <option value="HyperX">
+                            <option value="JBL">
+                            <option value="Logitech">
+                            <option value="Rise Mode">
+                            <option value="SanDisk">
+                        </datalist>
+                    </form>
+                </details>
+                
+                <article class="review">
+
+                    <!-- H4 | Título de 4º nível do destaque -->
+                    <h4>Destaque:</h4>
+
+                    <!-- BLOCKQUOTE | Citação em destaque -->
+                    <blockquote cite="https://twitter.com/cliente">
+                        "Entrega rápida, chegou voando!"
+                    </blockquote>
+                    <p>- <!-- CITE | Citação do autor da frase --> <cite>João Silva</cite></p>
+                </article>
+
+
+
+                <div class="sidebar-extra">
+                    <!-- H5 | Título de 5º nível da seção de atendimento -->
+                    <h5>Atendimento</h5>
+
+                    <!-- H6 | Título de 6º nível da seção de envio de feedback -->
+                    <h6>Envie seu feedback</h6>
+
+                    <form onsubmit="return false">
+                        <label for="subject">Assunto:</label>
+                        <select id="subject" name="subject">
+                            <!-- OPTGROUP | Tag que representa o grupo de opções dentro do select -->
+                            <optgroup label="Suporte">
+                                <option value="troca">Trocas e Devoluções</option>
+                                <option value="garantia">Garantia</option>
+                            </optgroup>
+                            <optgroup label="Comercial">
+                                <option value="vendas">Vendas Corporativas</option>
+                                <option value="parceria">Parcerias</option>
+                            </optgroup>
+                        </select>
+
+                        <label for="msg">Mensagem:</label>
+                        <!-- TEXTAREA | Campo de texto para a mensagem do feedback -->
+                        <textarea id="msg" rows="3" placeholder="Digite aqui..."></textarea>
+                        
+                        <button class="btn">Enviar</button>
+                    </form>
+
+                    <h6>Onde nos encontrar</h6>
+
+                    <!-- MAP | Mapa interativo para localização da loja -->
+                    <map name="store-locator">
+                        <!--   AREA | Área clicável dentro do mapa -->
+                        <area shape="rect" coords="34,44,270,350" alt="PD Case Informática" href="https://maps.app.goo.gl/ZxmqFi1cnNCmjyej6" target="_blank">
+
+                        <!-- IFRAME | Frame embutido para exibir o mapa do Google Maps -->
+                        <iframe id="store-locator" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4447.911881171375!2d-43.94500212401326!3d-19.978204839812857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa697ff7aba62c9%3A0x26a43f520c774e7!2sPD%20Case%20Inform%C3%A1tica!5e1!3m2!1spt-BR!2sbr!4v1763477677121!5m2!1spt-BR!2sbr" width="250" height="150" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </map>
+
+                </div>
+           
+            </aside>
+
+            <!-- SECTION | Seção principal da loja com os produtos --> 
+            <section class="grid">
+                
+                <article class="card">
+                    <!-- FIGURE | Figura que representa a imagem do produto -->
+                    <figure class="card-image">
+    
+                        <img src="./assets/img/processador-amd.webp" alt="Processador AMD Ryzen 5 24000G">
+
+                        <!-- SPAN | Tag de oferta -->
+                        <span class="tag">
+                            <!-- MARK | Tag de destaque --> 
+                            <mark>OFERTA</mark>
+                        </span> 
+                    </figure>
+                    
+                    <div class="info">
+                        <h3>Processador AMD Ryzen 5 2400G 
+                            <!-- BR | Quebra de linha -->
+                            <br>
+                        Radeon RX Vega 11 Graphics - usado</h3>
+                        
+                        <p class="desc">
+                            8 Núcleos, 3.9<abbr title="Gigahertz">GHz</abbr>, DDR4, AM4
+                        </p>
+                        
+                        <p class="price">
+                            <del>R$ 569,90</del>
+                            <strong>R$ 436,89 <small>à vista no PIX</small></strong>
+                        </p>
+                        
+                        <p class="timer">Acaba em: <time datetime="2025-12-31">31 Dez</time></p>
+                        
+                        <a href="https://produto.mercadolivre.com.br/MLB-4298811809-processador-amd-ryzen-5-2400g-yd2400c5m4mfb-com-placa-video-_JM" class="btn" target="_blank">Comprar</a>
+                        
+                        <p class="stock">
+                            <label for="stock1">Estoque:</label>
+
+                            <!-- METER | Tag que indica o nível de estoque -->
+                            <meter id="stock1" min="1" max="100" low="15" high="65" value="1"></meter>
+                            <span>Última unidade!</span>
+                        </p>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="./assets/img/water-coooler-rise.png" alt="Water Cooler RGB">
+                        <span class="tag"><mark>15% OFF</mark></span>
+                    </figure>
+                
+                    <div class="info">
+                        <h3>Water Cooler Rise Mode Gamer Master H<sub>2</sub>O - RGB 240mm</h3>
+                        <p class="desc">
+                            Refrigeração líquida para Intel Core i9<sup>®</sup> e AMD.
+                            </p>
+
+                        <p class="price">
+                            <del>R$ 500,00</del>
+                            <strong>R$ 358,90</strong>
+                            <small>Em até 7x R$ 51,28 sem juros</small>
+                        </p>
+                        
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="50" value="45"></meter>
+                            <span>Chegando mais!</span>
+                        </p>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="./assets/img/headset-jbl.jpg" alt="Headset Pro">
+                    </figure>
+    
+                    <div class="info">
+                        <h3>Headset JBL Quantum 100M2 Over Ear</h3>
+                        
+                        <p class="desc">Teste de áudio:</p>
+                        
+                        <!-- AUDIO | Elemento para reprodução de áudio -->
+                        <audio controls>
+                            <!-- SOURCE | Busca fonte do áudio -->
+                            <source src="./assets/media/audio-headset-jbl.mp4" type="audio/mpeg">
+                        </audio>
+    
+                        <p class="price">
+                            <!-- DEL | Tag usada em um elemnto deletado que indicava o preço anterior -->
+                            <del>R$ 899</del>
+
+                            <!-- STRONG | Tag que indica o preço atual em negrito -->
+                            <strong>R$ 650,00 
+                                <!-- SMALL | Tag que indica o preço em tamanho menor -->
+                                <small>à vista no PIX</small>
+                            </strong>
+                        </p>
+    
+                        <!-- BUTTON | Botão para realizar a compra -->
+                        <button class="btn">Comprar</button>
+    
+                        <p class="stock">
+                            <label for="stock2">Estoque:</label>
+                            <meter id="stock2" min="0" max="100" value="80"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/61ni3t1ryQL._AC_SY355_.jpg" alt="Mouse Gamer">
+                    </figure>
+                    <div class="info">
+                        <h3>Mouse Logitech MX Master 3S - Grafite</h3>
+                        
+                        <p class="desc">12000 DPI com Sensor Darkfield, Design Ergonômico, Conexão USB ou Bluetooth</p>
+
+                        <p class="price">
+                            <del>R$ 563,90</del>
+                            <strong>R$ 449,90</strong>
+                        </p>
+                        
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="50" value="25"></meter>
+                            <span>Em estoque</span>
+                        </p>
+                    </div>
+                </article>
+            
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="assets/img/monitor-ultrasharp-27.avif" alt="Monitor 4K">
+                    </figure>
+                    <div class="info">
+                        <h3>Monitor UltraSharp 27"</h3>
+                        
+                        <p class="desc">
+                            Resolução <dfn title="3840 x 2160 pixels">4K UHD</dfn>. 
+                            <br>Taxa: <samp>144Hz</samp>
+                        </p>
+
+                        <p class="price">
+                            <del>R$ 3.739,00</del>
+                            <strong>R$ 3.199,85</strong>
+                        </p>
+                        
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="20" value="5" low="5"></meter>
+                            <span>Últimas peças</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="assets/img/cyberpunk2077.webp" alt="Jogo Cyber Future">
+                    </figure>
+                    <div class="info">
+                        <h3>Cyber Future 2077 (PC Key)</h3>
+                        
+                        <p class="desc">
+                            <q>O melhor RPG do ano</q> - <cite>IGN</cite>
+                            </p>
+
+                        <p class="price">
+                            <del>R$ 299,00</del>
+                            <strong>R$ 150,00</strong>
+                        </p>
+                        
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+
+                        <p class="stock">
+                            <label>Digital:</label>
+                            <meter min="0" max="1" value="1"></meter>
+                            <span>Entrega Imediata</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="./assets/img/ssd-kingston.jpg" alt="SSD NVMe">
+                    </figure>
+                    <div class="info">
+                        <h3>SSD NVMe 1TB Pro</h3>
+                        
+                        <p class="desc">
+                            Modelo: <bdo dir="ltr">XG-5000</bdo>
+                            </p>
+                        
+                        <p class="price">
+                            <data value="450.00"><del>R$ 600,00</del></data>
+                            <strong>R$ 450,00</strong>
+                        </p>
+                        
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="100" value="80"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+
+                <!-- Grupo 1: Periféricos (Mouses, Teclados e Áudio) -->
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/61AcT0ZuO3L._AC_SY450_.jpg" alt="Mouse Gamer RGB">
+                    </figure>
+                    <div class="info">
+                        <h3>Mouse Gamer Cobra 10000 DPI</h3>
+                        <p class="desc">Sensor óptico avançado e iluminação Chroma.</p>
+                        <p class="price">
+                            <del>R$ 150,00</del>
+                            <strong>R$ 99,90 <small>à vista</small></strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="100" value="80"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/51-opSq3TGL._AC_SY355_.jpg" alt="Suporte RGB">
+                    </figure>
+                    <div class="info">
+                        <h3>Suporte para Headset RGB</h3>
+                        <p class="desc">Com Hub USB 2.0 integrado.</p>
+                        <p class="price">
+                            <del>R$ 120,00</del>
+                            <strong>R$ 79,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="50" value="45"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/71qTtU45xSL._AC_SY355_.jpg" alt="Microfone Streamer">
+                    </figure>
+                    <div class="info">
+                        <h3>Microfone HyperX QuadCast 2</h3>
+
+                        <p class="desc">Teste de áudio:</p>
+                        <audio controls>
+                            <source src="./assets/media/audio-hyperX.mp4" type="audio/mpeg">
+                        </audio>
+
+                        <p class="price">
+                            <del>R$ 450,00</del>
+                            <strong>R$ 320,00</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="30" value="5" low="5"></meter>
+                            <span>Últimas unidades!</span>
+                        </p>
+                    </div>
+                </article>
+
+                                    <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/61ge3d+MQwL._AC_SY450_.jpg" alt="Teclado 60%">
+                    </figure>
+                    <div class="info">
+                        <h3>Teclado Mecânico 60% Switch Red</h3>
+                        <p class="desc">Perfeito para FPS. Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> com precisão.</p>
+                        <p class="price">
+                            <del>R$ 350,00</del>
+                            <strong>R$ 289,00 <small>no PIX</small></strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="50" value="12" low="10"></meter>
+                            <span>Poucas peças</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/51zOCpXR30L._AC_SX300_SY300_QL70_ML2_.jpg" alt="Mousepad XXL">
+                    </figure>
+                    <div class="info">
+                        <h3>Mousepad Speed XXL (90x40cm)</h3>
+                        <p class="desc">Borda costurada e base emborrachada.</p>
+                        <p class="price">
+                            <del>R$ 89,90</del>
+                            <strong>R$ 59,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="200" value="150"></meter>
+                            <span>Em estoque</span>
+                        </p>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/71naaMdF-xL._AC_SX679_.jpg" alt="Soundbar Gamer">
+                    </figure>
+                    <div class="info">
+                        <h3>Soundbar Gamer Bluetooth</h3>
+                        <p class="desc">Som estéreo potente e design compacto.</p>
+                        <p class="price">
+                            <del>R$ 200,00</del>
+                            <strong>R$ 149,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="40" value="20"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Grupo 2: Hardware (Componentes Internos) -->
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/51HMh7cUYiL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Memória RAM">
+                        <span class="tag"><mark>Promo</mark></span>
+                    </figure>
+                    <div class="info">
+                        <h3>Memória RAM Fury 8GB DDR4</h3>
+                        <p class="desc">Frequência de <data value="3200">3200MHz</data> com dissipador.</p>
+                        <p class="price">
+                            <del>R$ 180,00</del>
+                            <strong>R$ 139,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="100" value="90"></meter>
+                            <span>Muitas peças</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/611HO-Za60L._AC_SY355_.jpg" alt="Memória RAM RGB">
+                    </figure>
+                    <div class="info">
+                        <h3>Memória RAM XPG 16GB RGB</h3>
+                        <p class="desc">DDR4 3600MHz. Sincroniza com Aura Sync.</p>
+                        <p class="price">
+                            <del>R$ 450,00</del>
+                            <strong>R$ 329,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="50" value="15"></meter>
+                            <span>Estoque médio</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/51E1sKuKDrL._AC_SX355_.jpg" alt="SSD M.2">
+                    </figure>
+                    <div class="info">
+                        <h3>SSD NVMe M.2 500GB</h3>
+                        <p class="desc">Leitura: 3500MB/s | Gravação: 2100MB/s.</p>
+                        <p class="price">
+                            <del>R$ 300,00</del>
+                            <strong>R$ 229,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="80" value="60"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://images8.kabum.com.br/produtos/fotos/369658/fonte-msi-mag-a650bn-atx-650w-80-plus-bronze-pfc-ativo-entrada-bivolt-preto-306-7zp2b22-ce0_1665770996_gg.jpg" alt="Fonte PC">
+                    </figure>
+                    <div class="info">
+                        <h3>Fonte 600W 80 Plus Bronze</h3>
+                        <p class="desc">PFC Ativo e ventoinha silenciosa.</p>
+                        <p class="price">
+                            <del>R$ 390,00</del>
+                            <strong>R$ 299,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="30" value="8"></meter>
+                            <span>Acabando</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/81ksnT7oAFL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Gabinete Vidro">
+                    </figure>
+                    <div class="info">
+                        <h3>Gabinete Gamer Tower Glass</h3>
+                        <p class="desc">Lateral em vidro temperado e 3 fans inclusos.</p>
+                        <p class="price">
+                            <del>R$ 350,00</del>
+                            <strong>R$ 279,00</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="20" value="18"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/31OYknrvYsL._SX342_SY445_QL70_ML2_.jpg" alt="Kit Ventoinhas">
+                    </figure>
+                    <div class="info">
+                        <h3>Kit 3 Ventoinhas 120mm ARGB</h3>
+                        <p class="desc">Com controladora e controle remoto.</p>
+                        <p class="price">
+                            <del>R$ 150,00</del>
+                            <strong>R$ 99,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="100" value="70"></meter>
+                            <span>Em estoque</span>
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Grupo 3: Acessórios e Diversos -->
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/61SCZyiMSNL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Webcam Full HD">
+                    </figure>
+                    <div class="info">
+                        <h3>Webcam Full HD 1080p</h3>
+                        <p class="desc">Foco automático e microfone embutido.</p>
+                        <p class="price">
+                            <del>R$ 200,00</del>
+                            <strong>R$ 149,00</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="50" value="20"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://assets.betalabs.net/production/flexform/item-images/395f9974ef067b3c0463c87ad2b58cfe.png" alt="Cadeira Gamer">
+                        <span class="tag"><mark>Frete Grátis</mark></span>
+                    </figure>
+                    <div class="info">
+                        <h3>Cadeira Gamer Racing Red</h3>
+                        <p class="desc">Reclinável 180° e almofadas lombares.</p>
+                        <p class="price">
+                            <del>R$ 1.200,00</del>
+                            <strong>R$ 899,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="10" value="3" low="3"></meter>
+                            <span>Últimas peças!</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/71kwBzZEG2L._AC_SY355_.jpg" alt="Cadeira Gamer Azul">
+                    </figure>
+                    <div class="info">
+                        <h3>Cadeira Gamer Racing Blue</h3>
+                        <p class="desc">Estrutura de aço e pistão classe 4.</p>
+                        <p class="price">
+                            <del>R$ 1.200,00</del>
+                            <strong>R$ 899,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="10" value="5"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://http2.mlstatic.com/D_Q_NP_847697-MLA88440796419_072025-F.webp" alt="Iluminação Ring Light">
+                    </figure>
+                    <div class="info">
+                        <h3>Ring Light de Mesa 10"</h3>
+                        <p class="desc">3 temperaturas de cor e tripé incluso.</p>
+                        <p class="price">
+                            <del>R$ 80,00</del>
+                            <strong>R$ 49,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="100" value="90"></meter>
+                            <span>Em estoque</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/61OVz5zZP6L._AC_SY300_SX300_QL70_ML2_.jpg" alt="Cabo HDMI">
+                    </figure>
+                    <div class="info">
+                        <h3>Cabo HDMI 2.1 8K 2 Metros</h3>
+                        <p class="desc">Suporte a HDR dinâmico e 48Gbps.</p>
+                        <p class="price">
+                            <del>R$ 70,00</del>
+                            <strong>R$ 45,00</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="200" value="180"></meter>
+                            <span>Muitas peças</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/41X6mUUbgTL._AC_SY450_.jpg" alt="Adaptador USB">
+                    </figure>
+                    <div class="info">
+                        <h3>Adaptador Bluetooth 5.0 USB</h3>
+                        <p class="desc">Conecte controles e fones no PC.</p>
+                        <p class="price">
+                            <del>R$ 40,00</del>
+                            <strong>R$ 29,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="50" value="30"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Grupo 4: Software e Digital (Sem frete!) -->
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRaINfoJ2xDPwb5G_ceulDVTLAEOTq_off6mHpNsSR2R-3kxF-A-LWjzfhchgwsHOVl66LZhAraiHLmO1ON5kDv8ckgxh6nU51B1Ff_ceOExoU1TUKzb5qs3cXsF-T_uUj8YIbk29QFd84&usqp=CAc" alt="Windows 11">
+                    </figure>
+                    <div class="info">
+                        <h3>Microsoft Windows 11 Home</h3>
+                        <p class="desc">Licença digital (ESD) vitalícia.</p>
+                        <p class="price">
+                            <del>R$ 900,00</del>
+                            <strong>R$ 759,00 <small>12x sem juros</small></strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Entrega:</label>
+                            <meter min="0" max="1" value="1"></meter>
+                            <span>Imediata (E-mail)</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/61c2fmVAAbL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Office 365">
+                    </figure>
+                    <div class="info">
+                        <h3>Microsoft 365 Personal</h3>
+                        <p class="desc">Assinatura de 1 ano + 1TB OneDrive.</p>
+                        <p class="price">
+                            <del>R$ 250,00</del>
+                            <strong>R$ 189,00</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Chave:</label>
+                            <meter min="0" max="1" value="1"></meter>
+                            <span>Digital</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT22Ge-WqKyMga-v1vreK8VeO1Oh3EFwKmF_OIc7lMgoOQqkGWqL70Q8uzrfdswd-IgQPl8oi75UqkjkO2fWOFFKj2ptSCsYNH4ZgbZ9xHY2cQqF6yzbbzzXXCffOdS8QrRFzIDrg&usqp=CAc" alt="Antivírus">
+                    </figure>
+                    <div class="info">
+                        <h3>Antivírus Total Security</h3>
+                        <p class="desc">Proteção para 3 dispositivos / 1 ano.</p>
+                        <p class="price">
+                            <del>R$ 80,00</del>
+                            <strong>R$ 49,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Download:</label>
+                            <meter min="0" max="1" value="1"></meter>
+                            <span>Imediato</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://m.media-amazon.com/images/I/71gH-fJJI0L.jpg" alt="Gift Card Steam">
+                    </figure>
+                    <div class="info">
+                        <h3>Gift Card Steam R$ 50</h3>
+                        <p class="desc">Crédito para sua carteira Steam.</p>
+                        <p class="price">
+                            <strong>R$ 50,00</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Código:</label>
+                            <meter min="0" max="1" value="1"></meter>
+                            <span>Envio Automático</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXoWPb-sDFx3QkdeSUMjyV1P9WCE-eY8ziYw&s" alt="Gift Card Xbox">
+                    </figure>
+                    <div class="info">
+                        <h3>Gift Card Xbox Game Pass</h3>
+                        <p class="desc">Assinatura Ultimate de 1 Mês.</p>
+                        <p class="price">
+                            <del>R$ 50,00</del>
+                            <strong>R$ 44,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Código:</label>
+                            <meter min="0" max="1" value="1"></meter>
+                            <span>Envio Automático</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://salescdn.net/CT0FHPRDT0L82yFIw-_m09BrOGo=/adaptive-fit-in/500x0/prod/store/14480/medias/product/roteador-tp-link-wi-fi-6-dual-band-ax3000-ex520-0-1759829273617.webp" alt="Roteador Wi-Fi 6">
+                        <span class="tag"><mark>Novidade</mark></span>
+                    </figure>
+                    <div class="info">
+                        <h3>Roteador Mesh Gigabit Wi-Fi 6</h3>
+                        <p class="desc">Cobertura total para casas grandes. Conexão estável.</p>
+                        <p class="price">
+                            <del>R$ 799,00</del>
+                            <strong>R$ 599,90</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="30" value="15"></meter>
+                            <span>Disponível</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card-image">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_779241-MLA95495498964_102025-F.webp" alt="HD Externo">
+                    </figure>
+                    <div class="info">
+                        <h3>SSD Externo Portátil 2TB USB 3.2</h3>
+                        <p class="desc">Backup seguro, resistente a quedas e poeira.</p>
+                        <p class="price">
+                            <del>R$ 1239,90</del>
+                            <strong>R$ 974,85</strong>
+                        </p>
+                        <a href="#" class="btn" target="_blank">Comprar</a>
+                        <p class="stock">
+                            <label>Estoque:</label>
+                            <meter min="0" max="100" value="85"></meter>
+                            <span>Em estoque</span>
+                        </p>
+                    </div>
+                </article>
+            
+                <!-- TABELA | BLACK FRIDAY -->
+                <aside class="black-friday-guide">
+                
+                    <!-- TABLE | Tag que representa a tabela de descontos da Black Friday -->
+                    <table>
+                        <!-- caption | Tag que representa a legenda da tabela -->
+                        <caption>⚡ Guia de Descontos: Black Friday PD Market ⚡</caption>
+                
+                        <!-- COLGROUP | Tag que representa o grupo de colunas da tabela -->
+                        <colgroup>
+                            <!-- COL | Tag que representa uma coluna da tabela -->
+                            <col span="1" class="col-category">
+                            <col span="1" class="col-discount">
+                            <col span="1" class="col-details">
+                        </colgroup>
+                
+                        <!-- THEAD | Tag que representa o cabeçalho da tabela -->
+                        <thead>
+                            <!-- TR | Tag que representa uma linha do cabeçalho da tabela -->
+                            <tr>
+                                <!-- TH | Tag que representa uma célula de cabeçalho da tabela -->
+                                <th>Departamento</th>
+                                <th>Desconto Máximo</th>
+                                <th>Condição Especial</th>
+                            </tr>
+                        </thead>
+                        
+                        <!-- TBODY | Tag que representa o corpo da tabela -->
+                        <tbody>
+                            <tr>
+                                <td>Hardware (CPUs, GPUs)</td>
+                                <td class="highlight">Até 40% OFF</td>
+                                <td>Frete Grátis p/ Sul e Sudeste</td>
+                            </tr>
+                            <tr>
+                                <td>Periféricos (Mouses, Teclados)</td>
+                                <td class="highlight">Até 60% OFF</td>
+                                <td>Bundle com Mousepad Grátis</td>
+                            </tr>
+                            <tr>
+                                <td>Games & Software</td>
+                                <td class="highlight">Até 80% OFF</td>
+                                <td>Entrega Digital Imediata</td>
+                            </tr>
+                            <tr>
+                                <td>Cadeiras & Escritório</td>
+                                <td class="highlight">Até 30% OFF</td>
+                                <td>Parcelamento em 12x s/ juros</td>
+                            </tr>
+                        </tbody>
+
+                        <!-- TFOOT | Tag que representa o rodapé da tabela -->
+                        <tfoot>
+                            <tr>
+                                <!-- TD | Tag que representa uma célula do rodapé da tabela -->
+                                <td colspan="3">
+                                    * Descontos válidos para pagamentos via PIX até 29/11 ou enquanto durarem os estoques.
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </aside>
+            </section>
+
+        </section> 
+    </main>
 </body>
 </html> 
