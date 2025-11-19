@@ -40,91 +40,378 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
 }
+ 
 
-/* --- FEATURE-FOOTER --- */
 
-.main-footer {
-    background-color: #0d111c; /* Fundo Escuro */
-    color: #aebacd; /* Texto Cinza Claro */
-    padding: 3rem 2rem 1rem 2rem;
-}
+/* --- FEATURE-HEADER ---  */
 
-.footer-content {
-    max-width: 1400px;
-    margin: 0 auto;
+  .feature-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-height: 300px;
+    background-color: var(--cor-primaria);
+
+    border-bottom: 0.5px solid var(--cor-borda);
+    box-shadow: 1px 1px 10px 1px ;
+
+
+  }
+
+  .header-top {
     display: grid;
-    /* Cria colunas responsivas: mínimo 200px cada */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 3rem;
-}
+    grid-template-columns: 1fr 40% 1fr;
+    align-items: center;
 
-.footer-col h5 {
-    color: #fff;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-    border-left: 3px solid var(--cor-secundaria);
-    padding-left: 0.8rem;
-}
+    width: 100%;
 
-/* Estilizando Listas */
-dl, ol, address {
-    font-size: 1.3rem;
-    line-height: 1.6;
-}
+    height: max-content;
 
-dt { 
-  color: var(--cor-secundaria);
-  font-weight: bold;
-  margin-top: 0.5rem;
-}
+    padding: 2.2rem 4rem 1.2rem 4rem;
+  }
 
-dd { 
-  margin-left: 0;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
+  .logo {
+    justify-self: end;
+  }
 
-ol { 
-  margin-left: 1.5rem; 
-}
+  .logo img {
+    height: 56px;
+    width: 56px;
 
-ol li {
-  margin-bottom: 0.4rem; 
-}
+    margin-right: 4.8rem;
+  }
 
-ol li a {
-  color: var(--cor-links);
-  text-decoration: none;
-}
+  form.search-bar {
 
-ol li a:hover {
-  color: #0099ff;
-  text-decoration: underline;
-}
+    height: 38px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 
-address { 
-  font-style: normal; 
-}
 
-address a {
-    color: var(--cor-links);
+    gap: 12px;
+
+  }
+  
+  #search-input {
+    
+    height: auto;
+    width: 100%;
+    padding: 12px;
+    
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    
+  }
+  
+  #search-input:focus {
+    outline: none;
+    box-shadow: 1px 1px 10px 1px var(--cor-borda);
+  }
+
+  
+  #search-input[placeholder] {
+    color: var(--cor-secundaria-fonte);
+    font-size: 14px;
+  }
+
+  .search-bar button {
+    height: auto;
+    width: 48px;
+    padding: 8px;
+    
+
+    background-color: transparent;
+    
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+
+    cursor: pointer;
+  }
+
+  .search-bar button:hover {
+    background-color: var(--cor-secundaria);
+  }
+  
+  .search-bar button svg:hover {
+    fill: #000000;
+  }
+
+
+  .user-actions {
+
+    justify-self: start;
+
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
+    padding: 0.3rem;
+
+    margin-left: 6.4rem;
+    
+  }
+
+  .user-actions li {
+    gap: 6px;
+  }
+
+
+  .user-actions li a {
     text-decoration: none;
+    padding: 4px;
+  }
+
+  .user-actions li a svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--cor-secundaria-fonte);
+    color: var(--cor-secundaria);
+  }
+
+  .user-actions li a svg:hover {
+    fill: var(--cor-secundaria);
+  }
+
+
+  /* header-navigation */
+    .header-nav {
+      width: 100%;
+      height: 100%;
+    }
+
+    .header-nav ul {
+
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      margin-bottom: 2rem;
+
+      gap: 24px;
+
+
+    }
+
+    .header-nav li {
+      list-style: none;
+    }
+
+    .header-nav li a {
+      font-weight: 500;
+
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+
+    }
+
+    .header-nav ul li a:hover {
+      color: var(--cor-primaria-fonte);
+    }
+
+    .header-nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--cor-links);
+      transition: width 0.3s ease-out;
+    }
+
+    .header-nav ul li a:hover::after {
+      width: 100%;
+    }
+
+
+/* --- FEATURE-CAROUSEL ---  */
+
+  .carousel-container {
+    width: 100%;
+    margin: 2rem auto;
+    overflow: hidden; /* Esconde os slides que tão fora da tela */
+    position: relative; /* Para pode posicionar a navegação. */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 2. O trem que mantém todos os slides */
+  .slides-wrapper {
+    display: flex;
+    width: 100%;
+    
+    /*  (AUTOPLAY): 
+      'autoplay' é o nome da animação.
+      '32s' é a duração total (8s por slide).
+      'infinite' faz com que ela rode em loop.
+    */
+    animation: autoplay 32s infinite ease-in-out;
+  }
+
+  /* 3. Cada slide individual */
+  .slide,
+  .slide-video {
+    width: 100%; 
+    flex-basis: 100%;
+    flex-shrink: 0;
+    position: relative; 
+  }
+
+  /* 4. A mídia (imagem/vídeo) */
+  .slide img,
+  .slide-video video {
+    width: 100%;
+    height: 55vh;
+    object-fit: cover; 
+    display: block; 
+  }
+
+  /* 5. A legenda sobre o slide */
+  .slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 4rem;
+    color: var(--cor-primaria-fonte);
+  
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  }
+
+  .slide-content h2 {
+    font-size: 3.2rem;
+    color: var(--cor-primaria-fonte);
+    margin-bottom: 0.5rem;
+  }
+
+
+  .slide-content p {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* 6. O botão Call-to-Action */
+  .cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-bg);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+  }
+
+  .cta-button:hover {
+    background-color: var(--cor-cta-btn);
+    transform: scale(1.05);
+  }
+
+  /* NAVEGAÇÃO CSS-ONLY */
+
+    /* 7. Esconde os botões radio */
+    .carousel-container input[type="radio"] {
+      display: none;
+    }
+
+    /* 8. O container dos labels de navegação */
+    .carousel-navigation {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+    }
+
+    /* 9. Cada label */
+    .nav-dot {
+      width: 12px;
+      height: 12px;
+      background-color: #FFF;
+      opacity: 0.5;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-dot:hover {
+      opacity: 0.8;
+    }
+
+    /* 10. Quando o input tiver :checked o 'nav-dot' (label) muda de cor. */
+    #slide1:checked ~ .carousel-navigation label[for="slide1"],
+    #slide2:checked ~ .carousel-navigation label[for="slide2"],
+    #slide3:checked ~ .carousel-navigation label[for="slide3"],
+    #slide4:checked ~ .carousel-navigation label[for="slide4"] {
+      opacity: 1;
+      background-color: var(--cor-secundaria);
+      transform: scale(1.1);
+    }
+
+    /* 11. Quando o input tiver :checked o 'slides-wrapper' (irmão ~) muda. 
+
+    /* slide 1 - check */
+    #slide1:checked ~ .slides-wrapper {
+      margin-left: 0;
+      
+    }
+
+    /* slide 2 - check */
+    #slide2:checked ~ .slides-wrapper {
+      margin-left: -100%;
+      animation: none;
+    }
+    /* slide 3 - check */
+    #slide3:checked ~ .slides-wrapper {
+      margin-left: -200%;
+      animation: none;
+    }
+    /* slide 4 - check */
+    #slide4:checked ~ .slides-wrapper {
+      margin-left: -300%;
+      animation: none;
+    }
+
+
+  /* ---  AUTOPLAY CSS-ONLY --- */
+
+    /* 12. A animação movimenta o 'margin-left' */
+    @keyframes autoplay {
+      /* Slide 1 (0% a 25%) */
+      0%   { margin-left: 0; }
+      20%  { margin-left: 0; } /* Fica parado no slide 1 */
+      
+      /* Slide 2 (25% a 50%) */
+      25%  { margin-left: -100%; }
+      45%  { margin-left: -100%; } /* Fica parado no slide 2 */
+      
+      /* Slide 3 (50% a 75%) */
+      50%  { margin-left: -200%; }
+      70%  { margin-left: -200%; } /* Fica parado no slide 3 */
+      
+      /* Slide 4 (75% a 100%) */
+      75%  { margin-left: -300%; }
+      95%  { margin-left: -300%; } /* Fica parado no slide 4 */
+      
+      /* Volta ao início */
+      100% { margin-left: 0; }
+    }
+  
+a {
+  color: var(--cor-secundaria-fonte);
 }
 
-progress {
-    height: 10px;
-    border-radius: 5px;
-}
 
-.copyright {
-  text-align: center;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--cor-secundaria-bg);
-  font-size: 1.2rem;
-  opacity: 0.6;
-}
-/* --- FEATURE-CARDS (Simplificado) --- */
+
+
+/* --- FEATURE-SHOP --- */
 
   .shop {
       display: grid;
@@ -242,7 +529,7 @@ progress {
         border-color: var(--cor-secundaria);
     }
 
-  /* --- GRID DE PRODUTOS --- */
+/* --- GRID DE PRODUTOS --- */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -446,376 +733,86 @@ progress {
       }
 
 
-      
-/* --- FEATURE-CAROUSEL --- */
+/* --- FEATURE-FOOTER --- */
 
-  .carousel-container {
-    width: 100%;
-    margin: 2rem auto;
-    overflow: hidden; /* Esconde os slides que estão fora da tela */
-    position: relative; /* Para posicionar a navegação e as legendas */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  /* 2. O "trilho" que mantém todos os slides */
-  .slides-wrapper {
-    display: flex;
-    width: 100%;
-    
-    /*  (AUTOPLAY): 
-      'autoplay' é o nome da animação.
-      '20s' é a duração total (5s por slide).
-      'infinite' faz com que ela rode em loop.
-    */
-    animation: autoplay 32s infinite ease-in-out;
-  }
-
-  /* 3. Cada slide individual */
-  .slide,
-  .slide-video {
-    width: 100%; /* Garante que cada slide ocupe 1/4 do 'trilho' */
-    flex-basis: 100%;
-    flex-shrink: 0;
-    position: relative; /* Para o <figcaption> */
-  }
-
-  /* 4. A mídia (imagem/vídeo) */
-  .slide img,
-  .slide-video video {
-    width: 100%;
-    height: 55vh; /* Altura do carrossel (55% da altura da tela) */
-    object-fit: cover; /* Garante que a mídia cubra todo o espaço */
-    display: block; /* Remove espaços em branco indesejados */
-  }
-
-  /* 5. A legenda sobre o slide */
-  .slide-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 3rem 4rem;
-    color: var(--cor-primaria-fonte);
-  
-    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
-  }
-
-  .slide-content h2 {
-    font-size: 3.2rem;
-    color: var(--cor-primaria-fonte);
-    margin-bottom: 0.5rem;
-  }
-
-
-  .slide-content p {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  /* 6. O botão Call-to-Action */
-  .cta-button {
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-primaria-bg);
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 700;
-    transition: transform 0.2s ease;
-  }
-
-  .cta-button:hover {
-    background-color: var(--cor-cta-btn);
-    transform: scale(1.05);
-  }
-
-  /* --- NAVEGAÇÃO CSS-ONLY --- */
-
-    /* 7. Esconde os botões radio */
-    .carousel-container input[type="radio"] {
-      display: none;
-    }
-
-    /* 8. O container dos labels de navegação */
-    .carousel-navigation {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 12px;
-    }
-
-    /* 9. Cada label */
-    .nav-dot {
-      width: 12px;
-      height: 12px;
-      background-color: #FFF;
-      opacity: 0.5;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .nav-dot:hover {
-      opacity: 0.8;
-    }
-
-    /* 10. Quando o input correspondente está :checked...
-    ...o 'nav-dot' (label) muda de cor. */
-    #slide1:checked ~ .carousel-navigation label[for="slide1"],
-    #slide2:checked ~ .carousel-navigation label[for="slide2"],
-    #slide3:checked ~ .carousel-navigation label[for="slide3"],
-    #slide4:checked ~ .carousel-navigation label[for="slide4"] {
-      opacity: 1;
-      background-color: var(--cor-secundaria);
-      transform: scale(1.1);
-    }
-
-    /* 11. O principal: Quando o input está :checked... 
-    ...o 'slides-wrapper' (irmão ~) se move. 
-
-    Quando o slide 1 está checado (default) */
-    #slide1:checked ~ .slides-wrapper {
-      margin-left: 0;
-      
-    }
-
-    /* Quando o slide 2 está check */
-    #slide2:checked ~ .slides-wrapper {
-      margin-left: -100%;
-      animation: none;
-    }
-    /* Quando o slide 3 está check */
-    #slide3:checked ~ .slides-wrapper {
-      margin-left: -200%;
-      animation: none;
-    }
-    /* Quando o slide 4 está check */
-    #slide4:checked ~ .slides-wrapper {
-      margin-left: -300%;
-      animation: none;
-    }
-
-
-  /* ---  AUTOPLAY CSS-ONLY --- */
-
-    /* 12. A animação que move o 'margin-left' */
-    @keyframes autoplay {
-      /* Slide 1 (0% a 25%) */
-      0%   { margin-left: 0; }
-      20%  { margin-left: 0; } /* Fica parado no slide 1 */
-      
-      /* Slide 2 (25% a 50%) */
-      25%  { margin-left: -100%; }
-      45%  { margin-left: -100%; } /* Fica parado no slide 2 */
-      
-      /* Slide 3 (50% a 75%) */
-      50%  { margin-left: -200%; }
-      70%  { margin-left: -200%; } /* Fica parado no slide 3 */
-      
-      /* Slide 4 (75% a 100%) */
-      75%  { margin-left: -300%; }
-      95%  { margin-left: -300%; } /* Fica parado no slide 4 */
-      
-      /* Volta ao início */
-      100% { margin-left: 0; }
-    }
-
-  
-
-a {
-  color: var(--cor-secundaria-fonte);
+.main-footer {
+    background-color: #0d111c; /* Fundo Escuro */
+    color: #aebacd; /* Texto Cinza Claro */
+    padding: 3rem 2rem 1rem 2rem;
 }
 
-
-/* FEATURE-HEADER */
-
-  .feature-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    max-height: 300px;
-    background-color: var(--cor-primaria);
-
-    border-bottom: 0.5px solid var(--cor-borda);
-    box-shadow: 1px 1px 10px 1px ;
-
-
-  }
-
-  .header-top {
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 40% 1fr;
-    align-items: center;
+    /* Cria colunas responsivas: mínimo 200px cada */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+}
 
-    width: 100%;
+.footer-col h5 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    border-left: 3px solid var(--cor-secundaria);
+    padding-left: 0.8rem;
+}
 
-    height: max-content;
+/* Estilizando Listas */
+dl, ol, address {
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
 
-    padding: 2.2rem 4rem 1.2rem 4rem;
-  }
+dt { 
+  color: var(--cor-secundaria);
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
 
-  .logo {
-    justify-self: end;
-  }
+dd { 
+  margin-left: 0;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
 
-  .logo img {
-    height: 56px;
-    width: 56px;
+ol { 
+  margin-left: 1.5rem; 
+}
 
-    margin-right: 4.8rem;
-  }
+ol li {
+  margin-bottom: 0.4rem; 
+}
 
-  form.search-bar {
+ol li a {
+  color: var(--cor-links);
+  text-decoration: none;
+}
 
-    height: 38px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+ol li a:hover {
+  color: #0099ff;
+  text-decoration: underline;
+}
 
+address { 
+  font-style: normal; 
+}
 
-    gap: 12px;
-
-  }
-  
-  #search-input {
-    
-    height: auto;
-    width: 100%;
-    padding: 12px;
-    
-    border: 1px solid var(--cor-borda);
-    border-radius: 4px;
-    
-    
-  }
-  
-  #search-input:focus {
-    outline: none;
-    box-shadow: 1px 1px 10px 1px var(--cor-borda);
-  }
-
-  
-  #search-input[placeholder] {
-    color: var(--cor-secundaria-fonte);
-    font-size: 14px;
-  }
-
-  .search-bar button {
-    height: auto;
-    width: 48px;
-    padding: 8px;
-    
-
-    background-color: transparent;
-    
-    border: 1px solid var(--cor-borda);
-    border-radius: 4px;
-
-    cursor: pointer;
-  }
-
-  .search-bar button:hover {
-    background-color: var(--cor-secundaria);
-  }
-  
-  .search-bar button svg:hover {
-    fill: #000000;
-  }
-
-
-  .user-actions {
-
-    justify-self: start;
-
-    display: flex;
-    flex-direction: row;
-
-    list-style: none;
-    padding: 0.3rem;
-
-    margin-left: 6.4rem;
-    
-  }
-
-  .user-actions li {
-    gap: 6px;
-  }
-
-
-  .user-actions li a {
+address a {
+    color: var(--cor-links);
     text-decoration: none;
-    padding: 4px;
-  }
+}
 
-  .user-actions li a svg {
-    width: 28px;
-    height: 28px;
-    fill: var(--cor-secundaria-fonte);
-    color: var(--cor-secundaria);
-  }
+progress {
+    height: 10px;
+    border-radius: 5px;
+}
 
-  .user-actions li a svg:hover {
-    fill: var(--cor-secundaria);
-  }
-
-
-
-  /* header-navigation */
-    .header-nav {
-      width: 100%;
-      height: 100%;
-    }
-
-    .header-nav ul {
-
-
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-
-      margin-bottom: 2rem;
-
-      gap: 24px;
-
-
-    }
-
-    .header-nav li {
-      list-style: none;
-    }
-
-    .header-nav li a {
-      font-weight: 500;
-
-      text-decoration: none;
-      position: relative;
-      padding-bottom: 4px;
-
-    }
-
-    .header-nav ul li a:hover {
-      color: var(--cor-primaria-fonte);
-    }
-
-    .header-nav ul li a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--cor-links);
-      transition: width 0.3s ease-out;
-    }
-
-    .header-nav ul li a:hover::after {
-      width: 100%;
-    }
-
-/* FIM - FEATURE-HEADER */
+.copyright {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--cor-secundaria-bg);
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
