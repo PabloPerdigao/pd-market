@@ -16,13 +16,20 @@
     <!-- BASE | Define o comportamento padrão dos links da página -->
   <base target="_blank">
 
-  <!-- JSON-LD | Dados estruturados para SEO -->
+  <!-- SCRIPT - json ld | Dados estruturados para SEO -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Store",
-      "name": "PD Market",
-      "description": "A melhor loja de tecnologia."
+        <!-- CONTEXT | at rule que define o contexto do JSON-LD -->
+            "@context": "https://schema.org",
+
+        <!-- TYPE | Define o tipo do item -->
+            "@type": "Store",
+
+        <!-- NAME | define o nome do item -->
+            "name": "PD Market",
+
+        <!-- URL | Define a URL do item -->
+            "description": "A melhor loja de tecnologia."
     }
     </script>
 
@@ -31,7 +38,7 @@
         .footer-highlight { color: var(--cor-secundaria); }
     </style>
 
-  <!-- TITLE | Título da página que aparece na aba do navegador -->
+  <!-- T6 | Título da página que aparece na aba do navegador -->
   <title>PD Market</title>
 </head>
 <!-- BODY | Conteúdo visível da página -->
@@ -145,14 +152,15 @@
 
     </header>
   
+    <!-- MAIN | Conteúdo principal da página -->
     <main>
-      </section>
 
         <!-- SECTION | Carrossel de ofertas -->
         <section class="carousel-container">
             
             <!-- INPUTS | Botões de navegação do carrossel -->
-            <input type="radio" name="carousel" id="slide1" checked> <input type="radio" name="carousel" id="slide2">
+            <input type="radio" name="carousel" id="slide1" checked> 
+            <input type="radio" name="carousel" id="slide2">
             <input type="radio" name="carousel" id="slide3">
             <input type="radio" name="carousel" id="slide4">
 
@@ -276,6 +284,7 @@
                     </form>
                 </details>
                 
+                <!-- ARTICLE | Tag que representa um artigo ou conteúdo independente -->
                 <article class="review">
 
                     <!-- H4 | Título de 4º nível do destaque -->
@@ -356,15 +365,26 @@
                         Radeon RX Vega 11 Graphics - usado</h3>
                         
                         <p class="desc">
-                            8 Núcleos, 3.9<abbr title="Gigahertz">GHz</abbr>, DDR4, AM4
+                            8 Núcleos, 3.9
+                            <!-- ABBR | tag que representa um conteúdo abreviado -->
+                            <abbr title="Gigahertz">GHz</abbr>
+                            , DDR4, AM4
                         </p>
                         
                         <p class="price">
+                            <!-- DEL | Tag que representa um preço antigo -->
                             <del>R$ 569,90</del>
-                            <strong>R$ 436,89 <small>à vista no PIX</small></strong>
+                            <!-- STRONG | Tag que representa o preço atual em negrito -->
+                            <strong>R$ 436,89 
+                                <!-- SMALL | Tag que representa info do preço em tamanho menor -->
+                                <small>à vista no PIX</small>
+                            </strong>
                         </p>
                         
-                        <p class="timer">Acaba em: <time datetime="2025-12-31">31 Dez</time></p>
+                        <p class="timer">Acaba em: 
+                            <!-- TIME | Tag que representa uma data/hora específica -->
+                            <time datetime="2025-12-31">31 Dez</time>
+                        </p>
                         
                         <a href="https://produto.mercadolivre.com.br/MLB-4298811809-processador-amd-ryzen-5-2400g-yd2400c5m4mfb-com-placa-video-_JM" class="btn" target="_blank">Comprar</a>
                         
@@ -373,10 +393,12 @@
 
                             <!-- METER | Tag que indica o nível de estoque -->
                             <meter id="stock1" min="1" max="100" low="15" high="65" value="1"></meter>
+                            <!-- SPAN | Tag que representa um conteúdo em linha -->
                             <span>Última unidade!</span>
                         </p>
                     </div>
                 </article>
+
                 <article class="card">
                     <figure class="card-image">
                         <img src="./assets/img/water-coooler-rise.png" alt="Water Cooler RGB">
@@ -1125,8 +1147,7 @@
 
                 </aside>
             </section>
-
-      
+        </section>
     </main>
   
   
