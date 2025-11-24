@@ -2,7 +2,7 @@
 
 O intuito deste projeto é desenvolver uma página de promoções do PD Market colocando em prática o conhecimento sobre Git/Github, HTML5 e CSS; com foco no versionamento pelo terminal e commits bem descritos no Git, a semântica em HTML, acessibilidade e estilização.
 
-![Vídeo do Projeto PD Market](./assets/media/preview-readme.mp4)
+![Vídeo do Projeto PD Market](./assets/media/preview-readme.gif)
 
 
 Requisitos obrigatórios:
