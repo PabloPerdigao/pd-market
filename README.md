@@ -2,7 +2,10 @@
 
 O intuito deste projeto é desenvolver uma página de promoções do PD Market colocando em prática o conhecimento sobre Git/Github, HTML5 e CSS; com foco no versionamento pelo terminal e commits bem descritos no Git, a semântica em HTML, acessibilidade e estilização.
 
-Rrequisitos obrigatórios:
+![Vídeo do Projeto PD Market](./assets/media/preview-readme.mp4)
+
+
+Requisitos obrigatórios:
 1.  **Zero JavaScript:** Toda a interatividade (carrossel, filtros, menus) deveria ser feita apenas com CSS.
 2.  **Semântica:** Uso obrigatório de uma lista de mais de 50 tags HTML5.
 3.  **Git Flow:** Desenvolvimento separado por *features* em branches específicas.
@@ -60,4 +63,5 @@ O projeto foi desenvolvido seguindo um fluxo profissional de branches, simulando
 <br>
 
 >  - Todas as features foram "mergeadas" na main através de Pull Requests no GitHub 
->  - Deploy do porjeto no vercel, acesse pelo link abaixo: 
+>  - Deploy do porjeto no vercel, acesse pelo link: 
+https://pd-market-one.vercel.app/
