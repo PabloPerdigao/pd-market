@@ -30,6 +30,9 @@
 
 html {
   font-size: 62.5%;
+
+  /* rolagem de forma suave */
+  scroll-behavior: smooth;
 }
 
 
@@ -55,7 +58,7 @@ body {
     background-color: var(--cor-primaria);
 
     border-bottom: 0.5px solid var(--cor-borda);
-    box-shadow: 1px 1px 10px 1px ;
+    box-shadow: 1px 1px 10px 1px;
 
   }
 
@@ -187,7 +190,6 @@ body {
 
     .header-nav ul {
 
-
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -197,27 +199,34 @@ body {
 
       gap: 24px;
 
-
     }
 
     .header-nav li {
       list-style: none;
     }
 
+    .header-nav li label,
     .header-nav li a {
+      color: var(--cor-secundaria-fonte);
       font-weight: 500;
 
       text-decoration: none;
       position: relative;
       padding-bottom: 4px;
+      
 
     }
 
-    .header-nav ul li a:hover {
+    .header-nav ul li label:hover,
+    .header-nav li a:hover {
       color: var(--cor-primaria-fonte);
+      text-decoration: none;
     }
 
-    .header-nav ul li a::after {
+
+
+    .header-nav ul li label::after,
+    .header-nav li a::after {
       content: '';
       position: absolute;
       width: 0;
@@ -228,7 +237,13 @@ body {
       transition: width 0.3s ease-out;
     }
 
-    .header-nav ul li a:hover::after {
+    .header-nav ul li #black:hover::after {
+      background-color: var(--cor-secundaria);
+    }
+
+    .header-nav ul li label:hover::after,
+    .header-nav li a:hover::after,
+    .header-nav ul li #black:hover::after {
       width: 100%;
     }
 
@@ -364,7 +379,6 @@ body {
     /* slide 1 - check */
     #slide1:checked ~ .slides-wrapper {
       margin-left: 0;
-      
     }
 
     /* slide 2 - check */
@@ -408,12 +422,6 @@ body {
       100% { margin-left: 0; }
     }
   
-a {
-  color: var(--cor-secundaria-fonte);
-}
-
-
-
 
 /* --- FEATURE-SHOP --- */
 
@@ -447,17 +455,17 @@ a {
         padding-left: 1rem;
     }
 
-    .links a {
+    .links li label{
         text-decoration: none;
         color: var(--cor-secundaria-fonte);
         display: block;
         padding: 0.5rem 0;
     }
 
-    .links a:hover { color: var(--cor-links); }
-
+    .links label:hover { 
+      color: var(--cor-links);
+    }
     
-
     /* Tags de Form na sidebar-filters */
     fieldset {
       border: none;
@@ -531,6 +539,73 @@ a {
     .sidebar-extra textarea:focus {
         outline: none;
         border-color: var(--cor-secundaria);
+    }
+
+    /* --- MODAL FEEDBACK USUÁRIO (CSS-ONLY) --- */
+
+    /* Esconde o modal */
+    .success-modal {
+      display: none; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+
+      z-index: 9999 !important; /* Fica sobre todo conteúdo */
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* O conteúdo */
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--cor-article-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 2px solid var(--cor-secundaria);
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      min-width: 300px;
+    }
+
+    .modal-content p {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    /* Botão de fechar dentro do modal */
+    .close-modal {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      background-color: var(--cor-secundaria);
+      color: var(--cor-primaria-bg);
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .close-modal:hover {
+      background-color: #d4a017;
+    }
+
+    /* Quando o checkbox estiver marcado, mostra o modal */
+    #toggle-msg:checked ~ .success-modal {
+      display: block;
+    }
+
+    /* Animação de entrada */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #shop, #ofertas {
+      scroll-margin-top: 120px; 
     }
 
 /* --- GRID DE PRODUTOS --- */
@@ -648,22 +723,22 @@ a {
 
     /* Estoque e Timer */
     
-    .timer {
-      font-size: 1.2rem;
-      margin-bottom: 0.2rem;
-    }
+      .timer {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+      }
 
-    .stock{
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
+      .stock{
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+      }
 
-    meter {
-      width: 100%;
-      height: 6px;
-      display: block;
-      margin: 6px 0; 
-    }
+      meter {
+        width: 100%;
+        height: 6px;
+        display: block;
+        margin: 6px 0; 
+      }
 
     /* TABELA | BLACK FRIDAY */
       .black-friday-guide {
@@ -675,11 +750,11 @@ a {
       }
 
       table {
-          width: 100%;
-          border-collapse: collapse;
-          background-color: #1a202c; 
-          color: var(--cor-primaria-fonte);
-          font-size: 1.4rem;
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #1a202c; 
+        color: var(--cor-primaria-fonte);
+        font-size: 1.4rem;
       }
 
       caption {
@@ -737,6 +812,41 @@ a {
       }
 
 
+    /* --- FILTRO DE CATEGORIAS --- */
+
+      /* label de botões clicáveis */
+      label[for^="cat-"] {
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      label[for^="cat-"]:hover {
+        color: var(--cor-links);
+        text-decoration: underline;
+      }
+
+    /* --- LÓGICA DE FILTRO COM CSS --- */
+
+      /* Filtro: Hardware */
+      #cat-hardware:checked ~ .shop .grid .card:not(.hardware) {
+        display: none;
+      }
+
+      /* Filtro: Periféricos */
+      #cat-perifericos:checked ~ .shop .grid .card:not(.perifericos) {
+        display: none;
+      }
+
+      /* Filtro: Games */
+      #cat-games:checked ~ .shop .grid .card:not(.games) {
+        display: none;
+      }
+
+      /* Filtro: Software */
+      #cat-software:checked ~ .shop .grid .card:not(.software) {
+        display: none;
+      }
+      
 /* --- FEATURE-FOOTER --- */
 
 .main-footer {

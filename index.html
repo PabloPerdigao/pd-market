@@ -13,8 +13,9 @@
   <!-- FAVICON | Ícone que aparece na aba do navegador -->
   <link rel="shortcut icon" href="./assets/img/icons/favicon.png" type="image/x-icon">
 
-    <!-- BASE | Define o comportamento padrão dos links da página -->
-  <base target="_blank">
+    <!-- BASE | Define o comportamento padrão dos links da página 
+        <base target="_blank">
+    -->
 
   <!-- SCRIPT - json ld | Dados estruturados para SEO -->
     <script type="application/ld+json">
@@ -38,11 +39,13 @@
         .footer-highlight { color: var(--cor-secundaria); }
     </style>
 
-  <!-- T6 | Título da página que aparece na aba do navegador -->
+  <!-- TITLE | Título da página que aparece na aba do navegador -->
   <title>PD Market</title>
 </head>
 <!-- BODY | Conteúdo visível da página -->
 <body>
+    <!-- INPUT - Input do modal de envio de feedback -->
+    <input type="checkbox" id="toggle-msg" hidden>
 
     <!-- HEADER | Cabeçalho da página -->
     <header class="feature-header">
@@ -142,11 +145,31 @@
 
             <!-- UL - NAV LINKS | Lista não ordenada de links da navegação principal -->
             <ul> 
-                <li><a href="/hardware">Hardware</a></li> 
-                <li><a href="/software">Software</a></li>
-                <li><a href="/perifericos">Periféricos</a></li>
-                <li><a href="/games">Games</a></li>
-                <li><a href="/promocoes">Promoções</a></li>
+                <li>
+                    <a href="#shop" style="text-decoration:none;">
+                        <label for="cat-hardware">Hardware</label>
+                    </a>
+                </li> 
+                
+                <li>
+                    <a href="#shop" style="text-decoration:none;">
+                        <label for="cat-software">Software</label>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#shop" style="text-decoration:none;">
+                        <label for="cat-perifericos">Periféricos</label>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#shop" style="text-decoration:none;">
+                        <label for="cat-games">Games</label>
+                    </a>
+                </li>
+                
+                <li><a href="#ofertas" id="black">Black Friday</a></li>
             </ul>
         </nav>
 
@@ -154,6 +177,11 @@
   
     <!-- MAIN | Conteúdo principal da página -->
     <main>
+        <input type="radio" name="filtro" id="cat-todas" checked hidden>
+        <input type="radio" name="filtro" id="cat-hardware" hidden>
+        <input type="radio" name="filtro" id="cat-perifericos" hidden>
+        <input type="radio" name="filtro" id="cat-games" hidden>
+        <input type="radio" name="filtro" id="cat-software" hidden>
 
         <!-- SECTION | Carrossel de ofertas -->
         <section class="carousel-container">
@@ -185,7 +213,7 @@
 
                         <!-- P | Parágrafo da legenda do carrossel -->
                         <p>BLACK FRIDAY - Setup 50%OFF</p>
-                        <a href="/oferta-video" class="cta-button">Garantir oferta</a>
+                        <a href="#shop" class="cta-button">Garantir oferta</a>
                     </figcaption>
 
                 </figure>
@@ -195,7 +223,7 @@
                     <figcaption class="slide-content">
                         <h2>Periféricos com 30% OFF</h2>
                         <p>Monte seu setup ideal com desconto.</p>
-                        <a href="/oferta-perifericos" class="cta-button">Ver oferta</a>
+                        <a href="/perifericos" class="cta-button">Ver oferta</a>
                     </figcaption>
                 </figure>
 
@@ -228,7 +256,7 @@
 
         </section> 
 
-        <section class="shop">
+        <section class="shop" id="shop">
             <!-- ASIDE | Tag que representa a barra lateral de filtros -->
             <aside class="sidebar-filters">
                 
@@ -243,10 +271,21 @@
                     <!-- UL | Lista não ordenada de links -->
                     <ul class="links">
                         <!-- LI | Item da lista de links -->
-                        <li><a href="#">Periféricos (14)</a></li>
-                        <li><a href="#">Hardware (8)</a></li>
-                        <li><a href="#">Licenças (5)</a></li>
-                        <li><a href="#">Games (3)</a></li>
+                        <li>
+                            <label for="cat-perifericos" style="text-decoration:none">Periféricos (14)</label>
+                        </li>
+                        <li>
+                            <label for="cat-hardware" style="text-decoration:none">Hardware (8)</label>
+                        </li>
+                        <li>
+                            <label for="cat-software" style="text-decoration:none">Licenças (5)</label>
+                        </li>
+                        <li>
+                            <label for="cat-games" style="text-decoration:none">Games (3)</label>
+                        </li>
+                        <li>
+                            <label for="cat-todas" style="text-decoration:none">Ver Todos</label>
+                        </li>
                     </ul>
                 </details>
 
@@ -300,6 +339,7 @@
 
 
                 <div class="sidebar-extra">
+
                     <!-- H5 | Título de 5º nível da seção de atendimento -->
                     <h5>Atendimento</h5>
 
@@ -324,8 +364,9 @@
                         <!-- TEXTAREA | Campo de texto para a mensagem do feedback -->
                         <textarea id="msg" rows="3" placeholder="Digite aqui..."></textarea>
                         
-                        <button class="btn">Enviar</button>
+                        <label for="toggle-msg" class="btn" style="display:block; text-align:center; cursor:pointer;">Enviar</label>
                     </form>
+
 
                     <h6>Onde nos encontrar</h6>
 
@@ -345,7 +386,7 @@
             <!-- SECTION | Seção principal da loja com os produtos --> 
             <section class="grid">
                 
-                <article class="card">
+                <article class="card hardware">
                     <!-- FIGURE | Figura que representa a imagem do produto -->
                     <figure class="card-image">
     
@@ -399,7 +440,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="./assets/img/water-coooler-rise.png" alt="Water Cooler RGB">
                         <span class="tag"><mark>15% OFF</mark></span>
@@ -428,7 +469,7 @@
                 </article>
 
 
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="./assets/img/headset-jbl.jpg" alt="Headset Pro">
                     </figure>
@@ -466,7 +507,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/61ni3t1ryQL._AC_SY355_.jpg" alt="Mouse Gamer">
                     </figure>
@@ -490,7 +531,7 @@
                     </div>
                 </article>
             
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="assets/img/monitor-ultrasharp-27.avif" alt="Monitor 4K">
                     </figure>
@@ -517,7 +558,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card games">
                     <figure class="card-image">
                         <img src="assets/img/cyberpunk2077.webp" alt="Jogo Cyber Future">
                     </figure>
@@ -543,7 +584,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="./assets/img/ssd-kingston.jpg" alt="SSD NVMe">
                     </figure>
@@ -571,7 +612,7 @@
 
 
                 <!-- Grupo 1: Periféricos (Mouses, Teclados e Áudio) -->
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/61AcT0ZuO3L._AC_SY450_.jpg" alt="Mouse Gamer RGB">
                     </figure>
@@ -591,7 +632,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/51-opSq3TGL._AC_SY355_.jpg" alt="Suporte RGB">
                     </figure>
@@ -611,7 +652,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/71qTtU45xSL._AC_SY355_.jpg" alt="Microfone Streamer">
                     </figure>
@@ -636,7 +677,7 @@
                     </div>
                 </article>
 
-                                    <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/61ge3d+MQwL._AC_SY450_.jpg" alt="Teclado 60%">
                     </figure>
@@ -656,7 +697,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/51zOCpXR30L._AC_SX300_SY300_QL70_ML2_.jpg" alt="Mousepad XXL">
                     </figure>
@@ -677,7 +718,7 @@
                 </article>
 
 
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/71naaMdF-xL._AC_SX679_.jpg" alt="Soundbar Gamer">
                     </figure>
@@ -698,7 +739,7 @@
                 </article>
 
                 <!-- Grupo 2: Hardware (Componentes Internos) -->
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/51HMh7cUYiL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Memória RAM">
                         <span class="tag"><mark>Promo</mark></span>
@@ -719,7 +760,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/611HO-Za60L._AC_SY355_.jpg" alt="Memória RAM RGB">
                     </figure>
@@ -739,7 +780,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/51E1sKuKDrL._AC_SX355_.jpg" alt="SSD M.2">
                     </figure>
@@ -759,7 +800,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="https://images8.kabum.com.br/produtos/fotos/369658/fonte-msi-mag-a650bn-atx-650w-80-plus-bronze-pfc-ativo-entrada-bivolt-preto-306-7zp2b22-ce0_1665770996_gg.jpg" alt="Fonte PC">
                     </figure>
@@ -779,7 +820,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/81ksnT7oAFL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Gabinete Vidro">
                     </figure>
@@ -799,7 +840,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/31OYknrvYsL._SX342_SY445_QL70_ML2_.jpg" alt="Kit Ventoinhas">
                     </figure>
@@ -821,7 +862,7 @@
 
                 <!-- Grupo 3: Acessórios e Diversos -->
 
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/61SCZyiMSNL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Webcam Full HD">
                     </figure>
@@ -841,7 +882,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card ergonomia">
                     <figure class="card-image">
                         <img src="https://assets.betalabs.net/production/flexform/item-images/395f9974ef067b3c0463c87ad2b58cfe.png" alt="Cadeira Gamer">
                         <span class="tag"><mark>Frete Grátis</mark></span>
@@ -862,7 +903,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card ergonomia">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/71kwBzZEG2L._AC_SY355_.jpg" alt="Cadeira Gamer Azul">
                     </figure>
@@ -882,7 +923,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://http2.mlstatic.com/D_Q_NP_847697-MLA88440796419_072025-F.webp" alt="Iluminação Ring Light">
                     </figure>
@@ -902,7 +943,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/61OVz5zZP6L._AC_SY300_SX300_QL70_ML2_.jpg" alt="Cabo HDMI">
                     </figure>
@@ -922,7 +963,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/41X6mUUbgTL._AC_SY450_.jpg" alt="Adaptador USB">
                     </figure>
@@ -943,7 +984,7 @@
                 </article>
 
                 <!-- Grupo 4: Software e Digital (Sem frete!) -->
-                <article class="card">
+                <article class="card software">
                     <figure class="card-image">
                         <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRaINfoJ2xDPwb5G_ceulDVTLAEOTq_off6mHpNsSR2R-3kxF-A-LWjzfhchgwsHOVl66LZhAraiHLmO1ON5kDv8ckgxh6nU51B1Ff_ceOExoU1TUKzb5qs3cXsF-T_uUj8YIbk29QFd84&usqp=CAc" alt="Windows 11">
                     </figure>
@@ -963,7 +1004,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card software">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/61c2fmVAAbL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Office 365">
                     </figure>
@@ -983,7 +1024,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card software">
                     <figure class="card-image">
                         <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT22Ge-WqKyMga-v1vreK8VeO1Oh3EFwKmF_OIc7lMgoOQqkGWqL70Q8uzrfdswd-IgQPl8oi75UqkjkO2fWOFFKj2ptSCsYNH4ZgbZ9xHY2cQqF6yzbbzzXXCffOdS8QrRFzIDrg&usqp=CAc" alt="Antivírus">
                     </figure>
@@ -1003,7 +1044,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card games">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/71gH-fJJI0L.jpg" alt="Gift Card Steam">
                     </figure>
@@ -1022,7 +1063,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card games">
                     <figure class="card-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXoWPb-sDFx3QkdeSUMjyV1P9WCE-eY8ziYw&s" alt="Gift Card Xbox">
                     </figure>
@@ -1042,7 +1083,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="https://salescdn.net/CT0FHPRDT0L82yFIw-_m09BrOGo=/adaptive-fit-in/500x0/prod/store/14480/medias/product/roteador-tp-link-wi-fi-6-dual-band-ax3000-ex520-0-1759829273617.webp" alt="Roteador Wi-Fi 6">
                         <span class="tag"><mark>Novidade</mark></span>
@@ -1063,7 +1104,7 @@
                     </div>
                 </article>
 
-                <article class="card">
+                <article class="card hardware">
                     <figure class="card-image">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_2X_779241-MLA95495498964_102025-F.webp" alt="HD Externo">
                     </figure>
@@ -1084,7 +1125,7 @@
                 </article>
             
                 <!-- TABELA | BLACK FRIDAY -->
-                <aside class="black-friday-guide">
+                <aside id="ofertas" class="black-friday-guide">
                 
                     <!-- TABLE | Tag que representa a tabela de descontos da Black Friday -->
                     <table>
@@ -1239,5 +1280,15 @@
             <p>&copy; 2025 PD Market. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- MODAL DE SUCESSO - ENVIO FEEDBACK -->
+    <div class="success-modal">
+        <div class="modal-content">
+            <p>✅ <strong>Sucesso!</strong></p>
+            <p>Seu feedback foi enviado para nossa equipe.</p>
+            <label for="toggle-msg" class="close-modal">Fechar</label>
+        </div>
+    </div>
+
 </body>
 </html> 
