@@ -146,8 +146,8 @@
             <!-- UL - NAV LINKS | Lista não ordenada de links da navegação principal -->
             <ul> 
                 <li>
-                    <a href="#shop" style="text-decoration:none;">
-                        <label for="cat-hardware">Hardware</label>
+                    <a href="#shop" style="text-decoration:none;">Hardware
+                        <label for="cat-hardware"></label>
                     </a>
                 </li> 
                 
@@ -272,13 +272,13 @@
                     <ul class="links">
                         <!-- LI | Item da lista de links -->
                         <li>
-                            <label for="cat-perifericos" style="text-decoration:none">Periféricos (14)</label>
+                            <label for="cat-perifericos" style="text-decoration:none">Periféricos (12)</label>
                         </li>
                         <li>
-                            <label for="cat-hardware" style="text-decoration:none">Hardware (8)</label>
+                            <label for="cat-hardware" style="text-decoration:none">Hardware (12)</label>
                         </li>
                         <li>
-                            <label for="cat-software" style="text-decoration:none">Licenças (5)</label>
+                            <label for="cat-software" style="text-decoration:none">Licenças (3)</label>
                         </li>
                         <li>
                             <label for="cat-games" style="text-decoration:none">Games (3)</label>
@@ -427,7 +427,9 @@
                             <time datetime="2025-12-31">31 Dez</time>
                         </p>
                         
-                        <a href="https://produto.mercadolivre.com.br/MLB-4298811809-processador-amd-ryzen-5-2400g-yd2400c5m4mfb-com-placa-video-_JM" class="btn" target="_blank">Comprar</a>
+                        <label for="modal-produto-1" class="btn" style="cursor: pointer; display: block; text-align: center;">
+                            Ver Detalhes
+                        </label>
                         
                         <p class="stock">
                             <label for="stock1">Estoque:</label>
@@ -652,7 +654,7 @@
                     </div>
                 </article>
 
-                <article class="card hardware">
+                <article class="card perifericos">
                     <figure class="card-image">
                         <img src="https://m.media-amazon.com/images/I/71qTtU45xSL._AC_SY355_.jpg" alt="Microfone Streamer">
                     </figure>
@@ -1287,6 +1289,64 @@
             <p>✅ <strong>Sucesso!</strong></p>
             <p>Seu feedback foi enviado para nossa equipe.</p>
             <label for="toggle-msg" class="close-modal">Fechar</label>
+        </div>
+    </div>
+
+    <!-- MODAL DE DETALHES DO PRODUTO-->
+    <input type="checkbox" id="modal-produto-1" hidden>
+
+    <div class="product-details-modal">
+        <div class="details-box">
+            
+            <label for="modal-produto-1" class="close-x">&times;</label>
+
+            <div class="details-grid">
+                <figure class="details-img">
+                    <img src="./assets/img/processador-amd.webp" alt="Processador AMD Ryzen 5 Ampliado">
+                </figure>
+
+                <div class="details-info">
+                    <h3>Processador AMD Ryzen 5 2400G</h3>
+                    <p class="ref">Ref: YD2400C5M4MFB</p>
+
+                    <p class="long-desc">
+                        Eleve o nível do seu setup com o processador AMD Ryzen 5. Equipado com vídeo integrado Radeon RX Vega 11, ele permite jogar títulos populares sem precisar de placa de vídeo dedicada. <br>
+                        <strong>PS: eu realmente tô vendendo :)</strong>
+                    </p>
+
+                    <table class="specs-table">
+                        <tr>
+                            <th>Núcleos / Threads</th>
+                            <td>4 / 8</td>
+                        </tr>
+                        <tr>
+                            <th>Clock Base</th>
+                            <td>3.6GHz</td>
+                        </tr>
+                        <tr>
+                            <th>Clock Max</th>
+                            <td>3.9GHz</td>
+                        </tr>
+                        <tr>
+                            <th>Cache Total</th>
+                            <td>6MB</td>
+                        </tr>
+                        <tr>
+                            <th>Socket</th>
+                            <td>AM4</td>
+                        </tr>
+                    </table>
+
+                    <div class="details-price">
+                        <del>R$ 569,90</del>
+                        <strong>R$ 436,89</strong>
+                    </div>
+
+                    <a href="https://produto.mercadolivre.com.br/MLB-4298811809-processador-amd-ryzen-5-2400g-yd2400c5m4mfb-com-placa-video-_JM" target="_blank" class="btn-buy">
+                        Comprar Agora (Mercado Livre)
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
