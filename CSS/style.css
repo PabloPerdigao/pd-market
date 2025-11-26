@@ -848,10 +848,9 @@ body {
       }
       
 /* --- FEATURE-FOOTER --- */
-
 .main-footer {
-    background-color: #0d111c; /* Fundo Escuro */
-    color: #aebacd; /* Texto Cinza Claro */
+    background-color: #0d111c; 
+    color: #aebacd; 
     padding: 3rem 2rem 1rem 2rem;
 }
 
@@ -859,7 +858,6 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    /* Cria colunas responsivas: mínimo 200px cada */
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 3rem;
 }
@@ -970,7 +968,7 @@ progress {
 
 .close-x:hover { color: var(--cor-secundaria); }
 
-/* Layout Interno (Grid) */
+/* Layout Interno */
 .details-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -1072,19 +1070,19 @@ strong:hover {
 }
 .btn-buy:hover { background-color: var(--cor-links); }
 
-/* Lógica de Exibição */
+/* Lógica para abrir o modal */
 #modal-produto-1:checked ~ .product-details-modal {
   display: flex;
 }
 
-/* Animação */
-@keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
+/* Animação  e responasividade*/
+  @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+  }
 
-/* Responsividade do Modal */
-@media (max-width: 768px) {
-    .details-grid { grid-template-columns: 1fr; } 
-    .details-img { height: 200px; }
-}
+
+  @media (max-width: 768px) {
+      .details-grid { grid-template-columns: 1fr; } 
+      .details-img { height: 200px; }
+  }
